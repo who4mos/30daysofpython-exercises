@@ -1,0 +1,446 @@
+In this README file ill just post the exercises awnsers.
+
+* Day 1: Introduction
+
+** Level 1
+
+*** 1
+
+To check the python version just type in the terminal: ~python --version~
+
+*** 2
+
+#+begin_src python
+  3 + 4  # 7
+  3 - 4  # -1
+  3 * 4  # 12
+  3 % 4  # 3
+  3 / 4  # 0.75
+  3 ** 4 # 81
+  3 // 4 # 0
+#+end_src
+
+*** 3
+
+#+begin_src python
+  "John"
+  "Doe"
+  "Sweden"
+  "Yea"
+#+end_src
+
+*** 4
+
+#+begin_src python
+  10     # int
+  9.8    # float
+  3.14   # float
+  4 - 4j # complex
+  ['Asabeneh', 'Python', 'Finland'] # list
+  "John" # string
+  "Doe"   # string
+  "Spain"  # string
+#+end_src
+
+** Level 2
+
+*** 1
+
+File: [[file:day_1/helloworld.py][helloworld.py]]
+
+** Level 3
+
+*** 1
+
+#+begin_src python
+  print(type(420))
+  print(type(4.20))
+  print(type(69j))
+  print(type("Nice"))
+  print(type(True))
+  print(type([1, 2, 3, 4]))
+  print(type((1, 2)))
+  print(type({1, 1, 2, 3, 3, 2}))
+  print(type({"name": "John", "age": 29}))
+#+end_src
+
+*** 2
+
+#+begin_src python
+  print(((2-3)**2)**(1/2))
+  print(((10-8)**2)**(1/2))
+#+end_src
+
+* Day 2: Variables, Builtin Functions
+
+** Level 1
+
+*** 1
+
+File: [[file:day_2/variables.py][variables.py]]
+
+*** 2
+
+#+begin_src python :tangle day_2/variables.py
+  # Day 2: 30 Days of python programming
+#+end_src
+
+*** 3
+
+#+begin_src python :tangle day_2/variables.py
+  first_name = "Red"
+#+end_src
+
+*** 4
+
+#+begin_src python :tangle day_2/variables.py
+  last_name = "Master"
+#+end_src
+
+*** 5
+
+#+begin_src python :tangle day_2/variables.py
+  full_name = first_name + last_name
+#+end_src
+
+*** 6
+
+#+begin_src python :tangle day_2/variables.py
+  country = "Pallet"
+#+end_src
+
+*** 7
+
+#+begin_src python :tangle day_2/variables.py
+  city = "Lavender"
+#+end_src
+
+*** 8
+
+#+begin_src python :tangle day_2/variables.py
+  age = 420
+#+end_src
+
+*** 9
+
+#+begin_src python :tangle day_2/variables.py
+  year = 1969
+#+end_src
+
+*** 10
+
+#+begin_src python :tangle day_2/variables.py
+  is_maried = True
+#+end_src
+
+*** 11
+
+#+begin_src python :tangle day_2/variables.py
+  is_true = True
+#+end_src
+
+*** 12
+
+#+begin_src python :tangle day_2/variables.py
+  is_light_on = False
+#+end_src
+
+*** 13
+
+#+begin_src python :tangle day_2/variables.py
+  a, b =  420, 69
+#+end_src
+
+** Level 2
+
+*** 1
+
+#+begin_src python :tangle day_2/variables.py
+  print(type(first_name))
+  print(type(last_name))
+  print(type(full_name))
+  print(type(country))
+  print(type(city))
+  print(type(age))
+  print(type(year))
+  print(type(is_maried))
+  print(type(is_true))
+  print(type(is_light_on))
+  print(type(a))
+  print(type(b))
+#+end_src
+
+*** 2
+
+#+begin_src python :tangle day_2/variables.py
+  print(len(first_name))
+#+end_src
+
+*** 3
+
+#+begin_src python :tangle day_2/variables.py
+  print(len(first_name), len(last_name))
+#+end_src
+
+*** 4
+
+#+begin_src python :tangle day_2/variables.py
+  num_one = 5
+  num_two = 4
+
+  total = num_one + num_two
+  diff = num_one - num_two
+  product = num_one * num_two
+  divison = num_one / num_two
+  remainder = num_one % num_two
+  exp = num_one ** num_two
+  floor_division = num_one // num_two
+#+end_src
+
+*** 5
+
+#+begin_src python :tangle day_2/variables.py
+  r = 30
+
+  area_of_circle = 3.1415 * r ** 2
+  print(area_of_circle)
+
+  circum_of_circle = 2 * 3.1415 * r
+  print(circum_of_circle)
+  
+  r = float(input("Circle radius: "))
+  area_of_circle = 3.1415 * r ** 2
+  print(area_of_circle)
+#+end_src
+
+*** 6
+
+#+begin_src python :tangle day_2/variables.py
+  first_name = input("First Name: ")
+  last_name = input("Last Name: ")
+  country = input("Country: ")
+  age = int(input("Age: "))
+#+end_src
+
+*** 7
+
+#+begin_src python :tangle day_2/variables.py
+  print(help("keywords"))
+#+end_src
+
+* Day 3: Operators
+
+
+** 1
+
+#+begin_src python
+  age = 420
+#+end_src
+
+** 2
+
+#+begin_src python
+  height = 1.90
+#+end_src
+
+** 3
+
+#+begin_src python
+  c = 4 + 2j
+#+end_src
+
+** 4
+
+#+begin_src python
+  b = int(input("Enter base: "))
+  h = int(input("Enter height: "))
+  area = .5 * b * h
+
+  print("Area:", area)
+#+end_src
+
+** 5
+
+#+begin_src python
+  a = int(input("Enter side a: "))
+  b = int(input("Enter side b: "))
+  c = int(input("Enter side c: "))
+  p = a+b+c
+
+  print("Perimeter:", p)
+#+end_src
+
+** 6
+
+#+begin_src python
+  length = int(input("Length: "))
+  width = int(input("Width: "))
+
+  area = .5 * length * width
+  p = 2*(length + width)
+
+  print("Area:", area)
+  print("Perimeter:", p)
+#+end_src
+
+** 7
+
+#+begin_src python
+  r = int(input("Radius: "))
+  pi = 3.14
+
+  area = pi * r * r
+  circum = 2 * pi * r
+
+  print("Area:", area)
+  print("Circumference:", circum)
+#+end_src
+
+** 8
+
+#+begin_src python
+  # x intercept
+  y = 0
+  x = 2 / 2
+  x_inter = (x, y)
+  print(x_inter)
+
+  # y intercept
+  x = 0
+  y = 2 * x - 2
+  y_inter = (x, y)
+  print(y_inter)
+
+  # slope
+  m = (y_inter[1] - x_inter[1]) / (y_inter[0] - x_inter[0])
+  print(m)
+#+end_src
+
+** 9
+
+#+begin_src python
+  p1 = (2, 2)
+  p2 = (6, 10)
+
+  # slope
+  m = (p2[1] - p1[1]) / (p2[0] - p1[0])
+  print(m)
+
+  # euclidean distance
+  distance = ((p2[0] - p1[0]) ** 2 + (p2[1] - p1[1]) ** 2) ** .5
+  print(distance)
+#+end_src
+
+** 10
+
+#+begin_src python
+  2.0 == 2.0 # True
+#+end_src
+
+** 11
+
+#+begin_src python
+  for x in range(-10, 11):
+      y = x**2 + 6*x + 9
+      if y == 0:
+          print("x =", x, "y =", y)
+          break
+#+end_src
+
+** 12
+
+#+begin_src python
+  a = len("python")
+  b = len("dragon")
+
+  print(a != b)
+#+end_src
+
+** 13
+
+#+begin_src python
+  print("on" in "python" and "on" in "dragon")
+#+end_src
+
+** 14
+
+#+begin_src python
+  sentence = "I hope this course is not full of jargon"
+  print("jargon" in sentence)
+#+end_src
+
+** 15
+
+#+begin_src python
+  a = "python"
+  b = "dragon"
+
+  print("on" not in a and "on" not in b)
+#+end_src
+
+** 16
+
+#+begin_src python
+  print(str(float(len("python"))))
+#+end_src
+
+** 17
+
+#+begin_src python
+  if n % 2 == 0:
+      print("even")
+  else:
+      print("odd")    
+#+end_src
+
+** 18
+
+#+begin_src python
+  print(7 // 3 == int(2.7))
+#+end_src
+
+** 19
+
+#+begin_src python
+  print(type("10") == type(10))
+#+end_src
+
+** 20
+
+~int('9.8')~ raises an error. We can convert it to float before coverting to int to the snippet to work
+
+#+begin_src python
+  print(int(float("9.8")) == 10)
+#+end_src
+
+** 21
+
+#+begin_src python
+  hours = int(input("Enter hours: "))
+  rate  = int(input("Enter rate per hour: "))
+
+  earning = hours * rate
+
+  print("Your weekly earning is", earning)
+#+end_src
+
+** 22
+
+#+begin_src python
+  years = int(input("Enter number of years you've lived: "))
+
+  # get seconds by multiplying years by days in year,
+  # hours in a day, minutes in a hour and seconds in a minute
+  seconds = years * 365 * 24 * 60 * 60
+
+  print("You've lived for", seconds, "seconds.")
+#+end_src
+
+** 23
+
+#+begin_src python
+  x = 1
+  for i in range(5):
+      print(x, x**0, x**1, x**2, x**3)
+      x += 1
+#+end_src
