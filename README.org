@@ -444,3 +444,252 @@ File: [[file:day_2/variables.py][variables.py]]
       print(x, x**0, x**1, x**2, x**3)
       x += 1
 #+end_src
+
+* Day 4: Strings
+
+
+** 1
+
+#+begin_src python
+  s = "Thirty" + " " + "Days" + " " + "Of" + " " + "Python"
+  print(s)
+#+end_src
+
+** 2
+
+#+begin_src python
+  s = "Coding" + " " + "For" + " " + "All"
+  print(s)
+#+end_src
+
+** 3
+
+#+begin_src python
+  company = "Coding For All"
+#+end_src
+
+** 4
+
+#+begin_src python
+  print(company)
+#+end_src
+
+** 5
+
+#+begin_src python
+  print(len(company))
+#+end_src
+
+** 6
+
+#+begin_src python
+  print(company.upper())
+#+end_src
+
+** 7
+
+#+begin_src python
+  print(company.lower())
+#+end_src
+
+** 8
+
+#+begin_src python
+  print(company.capitalize())
+  print(company.title())
+  print(company.swapcase())
+#+end_src
+
+** 9
+
+#+begin_src python
+  print(company[:6])
+#+end_src
+
+** 10
+
+#+begin_src python
+  print(company.find("Coding"))
+  print(company.index("Coding"))
+  print("Coding" in company)
+#+end_src
+
+** 11
+#+begin_src python
+  print(company.replace("Coding", "Python"))
+#+end_src
+
+** 12
+
+#+begin_src python
+  words = company.split()
+  print(words)
+#+end_src
+
+** 13
+
+#+begin_src python
+  bigtechs = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon".split(',')
+  print(bigtechs)
+#+end_src
+
+** 14
+
+#+begin_src python
+  bigtechs = "Facebook, Google, Microsoft, Apple, IBM, Oracle, Amazon".split(',')
+  print(bigtechs)
+#+end_src
+
+** 15
+
+~company[0]~ = 'C'
+
+** 16
+
+~len(company)-1~ = 13
+
+** 17
+
+~company[10]~ = ' '
+
+** 18
+
+#+begin_src python
+  print("Python"[0] + "For"[0] + "Everyone"[0])
+#+end_src
+
+** 19
+
+#+begin_src python
+  print("Coding"[0] + "For"[0] + "All"[0])
+#+end_src
+
+** 20
+
+#+begin_src python
+  print(company.find('C'))
+#+end_src
+
+** 21
+
+#+begin_src python
+print("Python"[0] + "For"[0] + "Everyone"[0])
+#+end_src
+
+** 22
+
+#+begin_src python
+  print("Coding For All People".rfind('l'))
+#+end_src
+
+** 23
+
+#+begin_src python
+  sentence = "You cannot end a sentence with because because because is a conjunction"
+  print(sentence.index("because"))
+#+end_src
+
+** 24
+
+#+begin_src python
+  sentence = "You cannot end a sentence with because because because is a conjunction"
+  print(sentence.rindex("because"))
+#+end_src
+
+** 25
+
+#+begin_src python
+  sentence = "You cannot end a sentence with because because because is a conjunction"
+  start = sentence.index("because")
+  sz    = len("because because because")
+
+  print(sentence[start:start+sz])
+#+end_src
+
+** 26
+
+#+begin_src python
+  sentence = "You cannot end a sentence with because because because is a conjunction"
+  print(sentence.find("because"))
+#+end_src
+
+** 27
+
+#+begin_src python
+  sentence = "You cannot end a sentence with because because because is a conjunction"
+  start = sentence.index("because")
+  sz    = len("because because because")
+
+  print(sentence[start:start+sz])
+#+end_src
+
+** 28
+
+Yes.
+
+#+begin_src python
+  print("Coding For All".startswith("Coding"))
+#+end_src
+
+** 29
+
+No.
+
+#+begin_src python
+  print("Coding For All".endswith("coding"))
+#+end_src
+
+** 30
+
+#+begin_src python
+  print("   Coding For All      ".strip())
+#+end_src
+
+** 31
+
+~thirty_days_of_python~
+
+** 32
+
+#+begin_src python
+  libs = ['Django', 'Flask', 'Bottle', 'Pyramid', 'Falcon']
+  print(' '.join(libs))
+#+end_src
+
+** 33
+
+#+begin_src python
+  print("I am enjoying this challenge.\nI just wonder what is next.")
+#+end_src
+
+** 34
+
+#+begin_src python
+  print("Name\t\tAge\tCountry\tCity")
+  print("Asabeneh\t250\tFinland\tHelsinki")
+#+end_src
+
+** 35
+
+#+begin_src python
+  radius = 10
+  area = 3.14 * radius ** 2
+  print("The area of a circle with radius {} is {:.0f} meters square".format(radius, area))
+#+end_src
+
+** 36
+
+There were a lot of ways of doing this.
+
+#+begin_src python
+  (a, b) = (8, 6)
+  template = f"{a} . {b} = .".replace('.', "{}")
+
+  print(template.format('+', a+b))
+  print(template.format('-', a-b))
+  print(template.format('*', a*b))
+  print(template.format('/', round(a/b, 2)))
+  print(template.format('%', a%b))
+  print(template.format("//", a//b))
+  print(template.format("**", a**b))
+#+end_src
