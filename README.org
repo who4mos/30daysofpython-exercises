@@ -693,3 +693,226 @@ There were a lot of ways of doing this.
   print(template.format("//", a//b))
   print(template.format("**", a**b))
 #+end_src
+
+* Day 5: Lists
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  xs = []
+#+end_src
+
+*** 2
+
+#+begin_src python
+  xs = [1, 2, 3, 4, 5, 6]
+#+end_src
+
+*** 3
+
+#+begin_src python
+  len(xs)
+#+end_src
+
+*** 4
+
+#+begin_src python
+  xs[0]
+  xs[(len(xs)-1)//2]
+  xs[len(xs)-1]
+#+end_src
+
+*** 5
+
+#+begin_src python
+  mixed_data_types = ["John", 24, 1.69, "Loving", "Earth 616"]
+#+end_src
+
+*** 6
+
+#+begin_src python
+  it_companies = ["Facebook", "Google", "Microsoft", "Apple", "IBM", "Oracle", "Amazon"]
+#+end_src
+
+*** 7
+
+#+begin_src python
+  print(it_companies)
+#+end_src
+
+*** 8
+
+#+begin_src python
+  print(len(it_companies))
+#+end_src
+
+*** 9
+
+#+begin_src python
+  print(it_companies[0])
+  print(it_companies[(len(it_companies)-1)//2])
+  print(it_companies[len(it_companies)-1])
+#+end_src
+
+*** 10
+
+#+begin_src python
+  it_companies[3] = "Pear"
+  print(it_companies)
+#+end_src
+
+*** 11
+
+#+begin_src python
+  it_companies.append("AMD")
+#+end_src
+
+*** 12
+
+#+begin_src python
+  it_companies.insert((len(it_companies)-1)//2, "Nvidia")
+#+end_src
+
+*** 13
+
+#+begin_src python
+  it_companies[0] = it_companies[0].upper()
+#+end_src
+
+*** 14
+
+#+begin_src python
+  "#;  ".join(it_companies)
+#+end_src
+
+*** 15
+
+#+begin_src python
+  "Amazon" in it_companies
+#+end_src
+
+*** 16
+
+#+begin_src python
+  it_companies.sort()
+#+end_src
+
+*** 17
+
+#+begin_src python
+  it_companies.reverse()
+#+end_src
+
+*** 18
+
+#+begin_src python
+  it_companies[:3]
+#+end_src
+
+*** 19
+
+#+begin_src python
+  it_companies[-3:]
+#+end_src
+
+*** 20
+
+#+begin_src python
+  it_companies[(len(it_companies)-1)//2]
+#+end_src
+
+*** 21
+
+#+begin_src python
+  it_companies.pop(0)
+#+end_src
+
+*** 22
+
+#+begin_src python
+  it_companies.pop((len(it_companies)-1)//2)
+#+end_src
+
+*** 23
+
+#+begin_src python
+  it_companies.pop()
+#+end_src
+
+*** 24
+
+#+begin_src python
+  it_companies.clear()
+#+end_src
+
+*** 25
+
+#+begin_src python
+  del it_companies
+#+end_src
+
+*** 26
+
+#+begin_src python
+  front_end = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+  back_end = ['Node','Express', 'MongoDB']
+  joined = front_end + back_end
+#+end_src
+
+*** 27
+
+#+begin_src python
+  full_stack = joined.copy()
+  full_stack += ["Python", "Redux"]
+#+end_src
+
+** Level 2
+
+
+*** 1
+
+#+begin_src python
+  ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+  ages.sort
+  min_age = ages[0]
+  max_age = ages[-1]
+
+  # ?
+  ages.append(min_age)
+  ages.append(max_age)
+
+  # odd len
+  median = ages[(len(ages)-1)//2]
+  # even len
+  median = (ages[(len(ages)-1)//2] + ages[(len(ages)-1)//2+1]) / 2
+
+  average = sum(ages) / len(ages)
+
+  ages.sort()
+  ages_range = ages[-1] - age[0]
+
+  abs(min_age - average)
+  abs(max_age - average)
+#+end_src
+
+*** 1
+
+#+begin_src python
+  # i will not put the entire countries list because it is too big
+  countries[(len(countries)-1)//2] # Lesotho
+#+end_src
+
+*** 2
+
+#+begin_src python
+  first_half = countries[:((len(countries)-1)//2)+1]
+  second_half = countries[((len(countries)-1)//2)+1:]
+#+end_src
+
+*** 3
+
+#+begin_src python
+  china, russia, usa, *scandic = ["China", "Russia", "USA", "Finland", "Sweden", "Norway", "Denmark"]
+#+end_src
