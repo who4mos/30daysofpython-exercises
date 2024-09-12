@@ -916,3 +916,89 @@ There were a lot of ways of doing this.
 #+begin_src python
   china, russia, usa, *scandic = ["China", "Russia", "USA", "Finland", "Sweden", "Norway", "Denmark"]
 #+end_src
+
+* Day 6: Tuples
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  xs = tuple()
+#+end_src
+
+*** 2
+
+#+begin_src python
+  brothers = ("John", "Dave")
+  sisters = ("Erika", "Rita")
+#+end_src
+
+*** 3
+
+#+begin_src python
+  siblings = brothers + sisters
+#+end_src
+
+*** 4
+
+#+begin_src python
+  len(siblings) # 4
+#+end_src
+
+*** 5
+
+#+begin_src python
+  family_members = siblings + ("Jessica", "Frank")
+#+end_src
+
+** Level 2
+
+*** 1
+
+#+begin_src python
+  *siblings, mother, father = family_members
+#+end_src
+
+*** 2
+
+#+begin_src python
+  fruits = ("Apple", "Banana", "Strawberry")
+  vegetables = ("Lettuce", "Carrots", "Beets")
+  animals = ("Cow", "Pig", "Chicken")
+
+  food_stuff_tp = fruits + vegetables + animals
+#+end_src
+
+*** 3
+
+#+begin_src python
+  food_stuff_lt = list(food_stuff_tp)
+#+end_src
+
+*** 4
+
+#+begin_src python
+  food_stuff_lt[(len(food_stuff_lt)-1)//2]
+#+end_src
+
+*** 5
+
+#+begin_src python
+  first_three = food_stuff_lt[:3]
+  last_three = food_stuff_lt[-3:]
+#+end_src
+
+*** 6
+
+#+begin_src python
+  del food_stuff_tp
+#+end_src
+
+*** 7
+
+#+begin_src python
+  nordic_countries = ('Denmark', 'Finland','Iceland', 'Norway', 'Sweden')
+  print("Estonia" in nordic_countries)
+  print("Iceland" in nordic_countries)
+#+end_src
