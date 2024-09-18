@@ -1002,3 +1002,117 @@ There were a lot of ways of doing this.
   print("Estonia" in nordic_countries)
   print("Iceland" in nordic_countries)
 #+end_src
+
+* Day 7: Sets
+
+#+begin_src python
+  # sets
+  it_companies = {'Facebook', 'Google', 'Microsoft', 'Apple', 'IBM', 'Oracle', 'Amazon'}
+  A = {19, 22, 24, 20, 25, 26}
+  B = {19, 22, 20, 25, 26, 24, 28, 27}
+  age = [22, 19, 24, 25, 26, 24, 25, 24]
+#+end_src
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  print(len(it_companies))
+#+end_src
+
+*** 2
+
+#+begin_src python
+  it_companies.add("Twitter")
+#+end_src
+
+*** 3
+
+#+begin_src python
+  it_companies.update({"Nvidia", "AMD"})
+#+end_src
+
+*** 4
+
+#+begin_src python
+  it_companies.pop()
+#+end_src
+
+*** 5
+
+The ~remove~ method raises an error if the value passed is not in the set, ~discard~ does nothing.
+
+** Level 2
+
+*** 1
+
+#+begin_src python
+  print(A.union(B))
+#+end_src
+
+*** 2
+
+#+begin_src python
+  print(A.intersection(B))
+#+end_src
+
+*** 3
+
+#+begin_src python
+  print(A.issubset(B))
+#+end_src
+
+*** 4
+
+#+begin_src python
+  print(A.isdisjoint(B))
+#+end_src
+
+*** 5
+
+#+begin_src python
+  print(A.union(B))
+  print(B.union(A))
+#+end_src
+
+*** 6
+
+~{27, 28}~
+
+*** 7
+
+#+begin_src python
+  del A
+  del B
+#+end_src
+
+** Level 3
+
+*** 1
+
+#+begin_src python
+  age_set = set(age)
+  print(len(age))
+  print(len(age_site))
+#+end_src
+
+The list is bigger because when converting to set, repeating elements are discarded.
+
+*** 2
+
+All four data types can be travessed in a for loop.
+
+While lists, tuples and strings are indexable, sliceable and ordered, sets aren't ordered nor can be indexed/sliced. Sets also don't accept repeated objects.
+
+Tuples and strings are immutable while sets and lists are mutable.
+
+*** 3
+
+#+begin_src python
+  sentence = "I am a teacher and I love to inspire and teach people"
+  words = sentence.split()
+  unique_words = set(words)
+
+  print(unique_words)
+#+end_src
