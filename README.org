@@ -1116,3 +1116,86 @@ Tuples and strings are immutable while sets and lists are mutable.
 
   print(unique_words)
 #+end_src
+
+* Day 8: Dictionaries
+
+** 1
+
+#+begin_src python
+  dogs = dict()
+#+end_src
+
+** 2
+
+#+begin_src python
+  dog["name"]  = "Max"
+  dog["color"] = "Golden Brown"
+  dog["breed"] = "Labrador Retriever"
+  dog["legs"]  = 4
+  dog["age"]   = 3
+#+end_src
+
+** 3
+
+#+begin_src python
+  student = {
+      "first_name": "Emily",
+      "last_name": "Chen",
+      "gender": "Female",
+      "age": 20,
+      "marital_status": "Single",
+      "skills": ["Python", "HTML"],
+      "country": "United States",
+      "city": "New York",
+      "address": "123 Main Street, Apartment 4B"
+  }
+#+end_src
+
+** 4
+
+#+begin_src python
+  print(len(student))
+#+end_src
+
+** 5
+
+#+begin_src python
+  print(student["skills"])
+  print(type(student["skills"]) == list)
+#+end_src
+
+** 6
+
+#+begin_src python
+  student["skills"].append("CSS")
+#+end_src
+
+** 7
+
+#+begin_src python
+  print(student.keys())
+#+end_src
+
+** 8
+
+#+begin_src python
+  print(student.values())
+#+end_src
+
+** 9
+
+#+begin_src python
+  print(student.items())
+#+end_src
+
+** 10
+
+#+begin_src python
+  student.popitem()
+#+end_src
+
+** 11
+
+#+begin_src python
+  del dog
+#+end_src
