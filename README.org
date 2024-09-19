@@ -1199,3 +1199,136 @@ Tuples and strings are immutable while sets and lists are mutable.
 #+begin_src python
   del dog
 #+end_src
+
+* Day 9: Conditionals
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  age = int(input("Enter your age: "))
+
+  if age >= 18:
+      print("You are old enough to learn to drive.")
+  else:
+      print(f"You need {18-age} more years to learn to drive.")
+#+end_src
+
+*** 2
+
+#+begin_src python
+  my_age = 22
+  your_age = int(input("Enter your age: "))
+
+  diff = abs(my_age - your_age)
+
+  if my_age > your_age:
+      diff = my_age - your_age
+      if diff == 1:
+          print("I am 1 year older than you.")
+      else:
+          print(f"I am {diff} years older than you.")
+  elif your_age > my_age:
+      diff = your_age - my_age
+      if diff == 1:
+          print("You are 1 year older than me.")
+      else:
+          print(f"You are {diff} years older than me.")
+  else:
+      print("We have the same age.")
+#+end_src
+
+*** 3
+
+#+begin_src python
+  a = int(input("Enter number one: "))
+  b = int(input("Enter number two: "))
+
+  if a > b:
+      print(f"{a} is greater than {b}")
+  elif a < b:
+      print(f"{a} is less than {b}")
+  else:
+      print(f"{a} is equal to {b}")
+#+end_src
+
+** Level 2
+
+*** 1
+
+#+begin_src python
+  if grade >= 0:
+      if grade < 50:
+          print('F')
+      elif grade < 60:
+          print('D')
+      elif grade < 70:
+          print('C')
+      elif grade < 80:
+          print('B')
+      elif grade <= 100:
+          print('A')
+      else:
+          print("Invalid grade")
+  else:
+      print("Invalid grade")
+#+end_src
+
+*** 2
+
+#+begin_src python
+  month = input("Enter month: ")
+
+  if month.lower() in ("september", "october", "november"):
+      print("The season is Autumn")
+  elif month.lower() in ("december", "january", "frebruary"):
+      print("The season is Winter")
+  elif month.lower() in ("march", "april", "may"):
+      print("The season is Spring")
+  elif month.lower() in ("june", "july", "august"):
+      print("The season is Summer")
+  else:
+      print("Invalid month")
+#+end_src
+
+*** 3
+
+#+begin_src python
+  fruits = ['banana', 'orange', 'mango', 'lemon']
+  fruit = input("Fruit: ")
+
+  if fruit not in fruits:
+      fruits.append(fruit)
+  else:
+      print(f"{fruit} already exists in list.")
+#+end_src
+
+** Level 3
+
+*** 4
+
+#+begin_src python
+  if "skills" in person:
+      skills = person["skills"]
+      sz = len(skills)
+      
+      print(skills[(sz-1)//2])
+
+      print("Python" in skills)
+
+      if sz == 2 and "JavaScript" in skills and "React" in skills:
+          print("He is a front end developer")
+      else:
+          if "Node" in skills and "MongoDB" in skills:
+              if "Python" in skills:
+                  print("He is a back end developer")
+              if "React" in skills:
+                  print("He is a fullstack developer")
+          else:
+              print("unknow title")
+
+  if person["is_married"] and person["country"] == "Finland":
+      name = person["first_name"] + person["last_name"]
+      print(f"{name} lives in {person['country']}. He is married.")
+#+end_src
