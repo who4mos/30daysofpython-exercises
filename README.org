@@ -1332,3 +1332,172 @@ Tuples and strings are immutable while sets and lists are mutable.
       name = person["first_name"] + person["last_name"]
       print(f"{name} lives in {person['country']}. He is married.")
 #+end_src
+
+* Day 10: Loops
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  # for
+  for i in range(10+1):
+      print(i)
+
+  # while
+  i = 0
+  while i <= 10:
+      print(i)
+      i += 1
+#+end_src
+
+*** 2
+
+#+begin_src python
+  # for
+  for i in range(10, 0-1, -1):
+      print(i)
+
+  # while
+  i = 10
+  while i >= 0:
+      print(i)
+      i -= 1
+#+end_src
+
+*** 3
+
+#+begin_src python
+  for i in range(1, 8):
+      print('#'*i)
+#+end_src
+
+*** 4
+
+#+begin_src python
+  for row in range(8):
+      for col in range(8):
+          print('#', end=' ')
+          print()
+#+end_src
+
+*** 5
+
+#+begin_src python
+  for i in range(10+1):
+      print(f"{i} x {i} = {i*i}")
+#+end_src
+
+*** 6
+
+#+begin_src python
+  techs = ["Python", "Numpy","Pandas","Django", "Flask"]
+
+  for tech in techs:
+      print(tech)
+#+end_src
+
+*** 7
+
+#+begin_src python
+  for i in range(0, 100+1):
+      if i % 2 == 0:
+          print(i)
+#+end_src
+
+*** 8
+
+#+begin_src python
+  for i in range(0, 100+1):
+      if i % 2 == 1:
+          print(i)
+#+end_src
+
+** Level 2
+
+*** 1
+
+#+begin_src python
+  total = 0
+
+  for i in range(0, 100+1):
+      total += i
+
+      print(f"The sum of all numbers is {total}.")
+#+end_src
+
+*** 2
+
+#+begin_src python
+  even_sum = odd_sum = 0
+
+  for i in range(0, 100+1):
+      if i % 2 == 0:
+          even_sum += i
+      else:
+          odd_sum += i
+
+  print(f"The sum of all evens is {even_sum}. And the sum of all odds is {odd_sum}.")
+#+end_src
+
+** Level 3
+
+*** 1
+
+#+begin_src python
+  for country in countries:
+      if "land" in country:
+          lands.append(country)
+
+          print(lands)
+#+end_src
+
+*** 2
+
+#+begin_src python
+  fruits = ["banana", "orange", "mango", "lemon"]
+  reversed_fruits = []
+
+  for i in range(len(fruits)-1, -1, -1):
+      reversed_fruits.append(fruits[i])
+
+      print(reversed_fruits)
+#+end_src
+
+*** 3
+
+#+begin_src python
+  # total number of languages
+  languages = set()
+
+  for country in countries:
+      languages.update(country["languages"])
+
+  print(f"Total number of languages: {len(languages)}")
+
+  # 10 most spoken languages
+  language_count = dict()
+  for country in countries:
+      for language in country["languages"]:
+          language_count[language] = language_count.get(language, 0) + 1
+
+  counts_list = list()
+  for language, count in language_count.items():
+      counts_list.append((count, language))
+
+  counts_list.sort()
+  print("Ten most spoken languages: ")
+  for language in counts_list[-1:-11:-1]:
+      print(language[1])
+
+  # 10 most populated countries
+  pops = list()
+  for country in countries:
+      pops.append((country["population"], country["name"]))
+
+  pops.sort()
+
+  print("Ten most populated countries:")
+  for population, country in pops[-1:-11:-1]:
+      print(f"{country}: {population}")
+#+end_src
