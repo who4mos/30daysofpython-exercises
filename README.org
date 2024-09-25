@@ -1501,3 +1501,380 @@ Tuples and strings are immutable while sets and lists are mutable.
   for population, country in pops[-1:-11:-1]:
       print(f"{country}: {population}")
 #+end_src
+
+* Day 11: Functions
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  def add_two_numbers(x, y):
+      return x + y
+#+end_src
+
+*** 2
+
+#+begin_src python
+  def area_of_circle(r):
+      pi = 3.1415
+      return pi * r * r
+#+end_src
+
+*** 3
+
+#+begin_src python
+  def add_all_nums(*nums):
+      total = 0
+      for num in nums:
+          if type(num) == int or type(num) == float:
+              total += num
+          else:
+              print(f"{num} isn't a number.")
+
+      return total
+#+end_src
+
+*** 4
+
+#+begin_src python
+  def convert_celsius_to_fahrenheit(c):
+      return (c * (9/5)) + 3
+#+end_src
+
+*** 5
+
+#+begin_src python
+  def check_season(month):
+      seasons = {
+          "Autumn": ("september", "october", "november"),
+          "Winter": ("december", "january", "february"),
+          "Spring": ("march", "april", "may"),
+          "Summer": ("june", "july", "august")
+      }
+
+      for season, months in seasons.items():
+          if month.lower() in months:
+              return season
+
+      return "Invalid month"
+#+end_src
+
+*** 6
+
+#+begin_src python
+  def slope(p1, p2):
+      return (p2[1] - p1[1]) / (p2[0] - p1[0])
+#+end_src
+
+*** 7
+
+#+begin_src python
+  def solve_quadratic_eqn(a, b, c):
+      delta = b ** 2 - 4*a*c
+
+      if delta > 0:
+          x1 = (-b + delta ** (1/2)) / (2 * a)
+          x2 = (-b - delta ** (1/2)) / (2 * a)
+          return (x1, x2)
+      if delta == 0:
+          x = (-b + delta ** (1/2)) / (2 * a)
+          return x
+      else:
+          return "No real roots."
+#+end_src
+
+*** 8
+
+#+begin_src python
+  def print_list(l):
+      for item in l:
+          print(item)
+
+  l = [420, True, 69, "Nice"]
+  print_list(l)
+#+end_src
+
+*** 9
+
+#+begin_src python
+  def reverse_list(l):
+      new = []
+
+      for item in l[-1:-1:-1]:
+          new.append(item)
+      
+          return item
+#+end_src
+
+*** 10
+
+#+begin_src python
+  def capitalize_list_items(l):
+      new = []
+      for item in l:
+          if type(item) == str:
+              new.append(item.upper())
+          else:
+              print(f"{item} is not a string.")
+      
+      return new
+#+end_src
+
+*** 11
+
+#+begin_src python
+  def add_item(l, item):
+      return l[:] + [item]
+#+end_src
+
+*** 12
+
+#+begin_src python
+  def remove_item(l, item):
+      new = []
+      for i in l:
+          if i == item:
+              continue
+          new.append(i)
+
+      return new
+#+end_src
+
+*** 13
+
+#+begin_src python
+  def sum_of_numbers(n):
+      total = 0
+      for i in range(1, n+1):
+          total += i
+          
+      return total
+#+end_src
+
+*** 14
+
+#+begin_src python
+  def sum_of_odds(n):
+      total = 0
+      for i in range(n+1):
+          if i % 2 == 0:
+              continue
+          total += i
+          
+      return total
+#+end_src
+
+*** 15
+
+#+begin_src python
+  def sum_of_even(n):
+      total = 0
+      for i in range(n+1):
+          if i % 2 == 1:
+              continue
+          total += i
+          
+      return total
+#+end_src
+
+** Level 2
+
+*** 1
+
+#+begin_src python
+  def evens_and_odds(n):
+      evens = odds = 0
+      for i in range(n+1):
+          if i % 2 == 0:
+              evens += i
+          else:
+              odds += i
+              
+      return (evens, odds)
+#+end_src
+
+*** 2
+
+#+begin_src python
+  def factorial(n):
+      f = 1
+      for i in range(1, n+1):
+          f *= i
+
+      return f
+#+end_src
+
+*** 3
+
+#+begin_src python
+  def is_empty(x):
+      if type(x) in (str, list, tuple, dict, set):
+          return not bool(x)
+      else:
+          return False
+#+end_src
+
+*** 4
+
+#+begin_src python
+  def calculate_mean(l):
+      if len(l) == 0: return
+
+      total = 0
+      for item in l:
+          total += item
+
+      mean = total / len(l)
+
+      return mean
+
+  def calculate_median(l):
+      if len(l) == 0: return
+      
+      new = sorted(l)
+
+      if len(new) % 2 == 1:
+          return new[(len(new)-1)//2]
+      else:
+          return (new[(len(new)-1)//2] + new[(len(new)-1)//2+1]) / 2
+
+  def calculate_mode(l):
+      if len(l) == 0: return
+      
+      # get number of occurrences
+      count = {}
+      for i in l:
+          count[i] = count.get(i, 0) + 1
+
+      # create a list with tuples with count first to reverse it
+      count_tuples = []
+      for (value, ncount) in count.items():
+          count_tuples.append((ncount, value))
+
+      # reverse it
+      count_tuples.sort(reverse=True)
+      
+      # return most occurrencies value(s)
+      mode = []
+      big = count_tuples[0][0]
+      for (ncount, value)in count_tuples:
+          if ncount == big:
+              mode.append(value)
+
+      if len(mode) == 1:
+          return mode[0]
+      else:
+          return tuple(mode)
+
+  def calculate_range(l):
+      if len(l) <= 1: return
+
+      return sorted(l)[-1] - sorted(l)[0]
+
+  def calculate_variance(l):
+      if len(l) == 0: return
+      
+      mean  = calculate_mean(l)
+
+      total = 0
+      for i in l:
+          total += (i - mean) ** 2
+
+      return total / len(l)
+      
+  def calculate_std(l):
+      if len(l) == 0: return
+      return calculate_variance(l) ** (1/2)
+#+end_src
+
+** Level 3
+
+*** 1
+
+#+begin_src python
+  def is_prime(n):
+      if n <= 1:
+          return False
+
+      for i in range(2, n//2+1):
+          if n % i == 0:
+              return False
+
+      return True
+#+end_src
+
+*** 2
+
+#+begin_src python
+  def unique_items(l):
+      return len(l) == len((set(l)))
+#+end_src
+
+*** 3
+
+#+begin_src python
+  def unique_types(l):
+      if len(l) == 0: return True
+
+      t = type(l[0])
+      
+      for i in l[1:]:
+          if type(i) != t:
+              return False
+
+      return True
+#+end_src
+
+*** 4
+
+#+begin_src python
+  def is_variable_name(s):
+      keywords = ['False', 'None', 'True', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+      
+      return s.isidentifier() and s not in keywords
+#+end_src
+
+*** 5
+
+#+begin_src python
+    def most_spoken_languages(countries):
+      # get langugages count
+      language_count = {}
+      for country in countries:
+          for language in country["languages"]:
+              language_count[language] = language_count.get(language, 0) + 1
+
+      # get list of tuples with count and language
+      language_list = []
+      for (language, count) in language_count.items():
+          language_list.append((count, language))
+
+      # show 20 most spoken, in descending order
+      language_list.sort(reverse=True)
+      
+      most_spoken = []
+      for (count, language) in language_list[:20]:
+          most_spoken.append(language)
+
+      most_spoken.reverse()
+      
+      return most_spoken
+
+  def most_populated_countries(countries):
+      # get a list of tuples with population in each country
+      pop_count = []
+      for country in countries:
+          pop_count.append((country["population"], country["name"]))
+
+      # reverse the list to get most populated countries
+      pop_count.sort(reverse=True)
+
+      most_populated = []
+      for (pop, country) in pop_count[:20]:
+          most_populated.append(country)
+
+      most_populated.reverse()
+      
+      return most_populated
+#+end_src
