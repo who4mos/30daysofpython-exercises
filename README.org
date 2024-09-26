@@ -1878,3 +1878,124 @@ Tuples and strings are immutable while sets and lists are mutable.
       
       return most_populated
 #+end_src
+
+* Day 12: Modules
+
+** Level 1
+
+*** 1
+
+#+begin_src python
+  def random_user_id():
+      available_chars = string.digits + string.ascii_letters
+
+      uid = []
+      for i in range(5):
+          uid.append(random.choice(available_chars))
+          
+      return ''.join(uid)
+#+end_src
+
+*** 2
+
+#+begin_src python
+  def user_id_gen_by_user():
+      available_chars = string.digits + string.ascii_letters
+
+      chars = int(input("Number of characters: "))
+      id_count = int(input("Number of ids: "))
+
+      uids = []
+      for i in range(id_count):
+          uid = []
+          for c in range(chars):
+              uid.append(random.choice(available_chars))
+
+          uids.append(''.join(uid))
+          
+      return uids
+#+end_src
+
+*** 3
+
+#+begin_src python
+  def rgb_color_gen():
+      colors = []
+      for i in range(3):
+          colors.append(random.randint(0, 255))
+          
+      r, g, b = colors
+      return f"rgb({r},{g},{b})"
+#+end_src
+
+** Level 2
+
+*** 1
+
+#+begin_src python
+  def list_of_hexa_colors(n):
+      hex_digits = string.hexdigits[:-6] # remove lowercase chars
+      hex_colors = []
+
+      for i in range(n):
+          color = []
+          for d in range(6):
+              color.append(random.choice(hex_digits))
+
+          hex_colors.append(''.join(color))
+          
+      return hex_colors
+#+end_src
+
+*** 2
+
+#+begin_src python
+  def list_of_rgb_colors(n):
+      rgb_colors = []
+
+      for i in range(n):
+          rgb_colors.append(rgb_color_gen())
+          
+      return rgb_colors
+#+end_src
+
+*** 3
+
+#+begin_src python
+  def generate_colors(model, n):
+      if model.lower() == "rgb":
+          return list_of_rgb_colors(n)
+      elif model.lower() == "hexa":
+          return list_of_hexa_colors(n)
+      else:
+          print(f"{model} not supported.")
+#+end_src
+
+** Level 3
+
+*** 1
+
+#+begin_src python
+  def shuffle_list(l):
+      new = l.copy()
+
+      random.shuffle(new)
+      
+      return new
+#+end_src
+
+*** 2
+
+
+#+begin_src python
+  def seven_uniques():
+      numbers = list(range(10))
+      result = []
+      
+      for i in range(7):
+          n = random.choice(numbers)
+          result.append(n)
+          numbers.remove(n)
+          
+      return result
+#+end_src
